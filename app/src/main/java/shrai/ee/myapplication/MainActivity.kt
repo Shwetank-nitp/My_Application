@@ -53,12 +53,13 @@ class MainActivity : AppCompatActivity() {
         binder.listview.isClickable = true
         binder.listview.adapter = CustomAdapter(this, bookList)
         binder.listview.setOnItemClickListener { parent, view, position, id ->
-            startActivity(Intent(this, PageDirect::class.java).apply {
+            val intent=Intent(this, ToPageDirect::class.java).apply {
                 putExtra("bName", bookList[position].name)
                 putExtra("aName", bookList[position].aName)
                 putExtra("price", bookList[position].price.toString())
                 putExtra("image", bookList[position].imageId)
-            })
+            }
+            startActivity(intent)
         }
 
     }

@@ -10,10 +10,10 @@ import android.widget.TextView
 import shrai.ee.customlistview.Books
 
 class CustomAdapter(private val con:Activity, private val userData:ArrayList<Books>)
-    : ArrayAdapter<Books>(con, R.layout.list_view,userData){
+    : ArrayAdapter<Books>(con, R.layout.list_views,userData){
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val view : View = LayoutInflater.from(con).inflate(R.layout.list_view,null)
+        val view : View = LayoutInflater.from(con).inflate(R.layout.list_views,null)
         val price = view.findViewById<TextView>(R.id.price)
         val name = view.findViewById<TextView>(R.id.bookName)
         val aName = view.findViewById<TextView>(R.id.authorName)
